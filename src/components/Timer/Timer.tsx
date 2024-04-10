@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Text, View, Button, TouchableOpacity } from "react-native";
+import { Text, View, Button, NativeModules } from "react-native";
 import TimerLayout from "./timerLayout";
+
+const { TimerModule } = NativeModules;
 
 const Timer = () => {
 	const [time, setTime] = useState<number>(0);
@@ -21,16 +23,23 @@ const Timer = () => {
 		console.log("pause");
 	};
 
+	const getNumber = async (number: number) => {
+		const response = await TimerModule.getNumber(number);
+		console.log("getNumber");
+	};
+
 	useEffect(() => {
-		console.log(time);
-	}, [time]);
+		console.log("useEffect");
+	}, []);
 
 	return (
 		<>
 			<View>
 				<View style={TimerLayout.timerWrap}>
 					<View style={TimerLayout.timerHeader}>
-						<Text style={TimerLayout.timerHeaderText}>Timer</Text>
+						<Text style={TimerLayout.timerHeaderText}>
+							{`Timer Module`}
+						</Text>
 					</View>
 					<View style={TimerLayout.timerBody}>
 						<Text style={TimerLayout.timerBodyText}>Time</Text>
@@ -44,7 +53,9 @@ const Timer = () => {
 						<Button title="Pause" onPress={pauseTime} />
 					</View>
 				</View>
-				<Text>{time}</Text>
+				<View style={TimerLayout.timerButton}>
+					<Button title="Get Number" onPress={() => getNumber(10)} />
+				</View>
 			</View>
 		</>
 	);
