@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Text, View, Button, TouchableOpacity } from "react-native";
 import { CommonType } from "../types/NavigationType";
 
