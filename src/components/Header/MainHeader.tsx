@@ -4,6 +4,7 @@ import mainHeaderLayout from "./MainHeaderLayout";
 import HeaderLogo from "../../assets/react-native-logo.png";
 import GiftBox from "../../assets/giftbox.png";
 import SearchIcon from "../../assets/searchIcon.png";
+
 const MainHeader = () => {
 	const [text, setText] = useState<string>("");
 
@@ -34,7 +35,7 @@ const MainHeader = () => {
 						<TextInput
 							style={mainHeaderLayout.headerInputBox}
 							onChangeText={setText}
-							placeholder="자주 먹는 영양제, 혹은 약을 검색해 보세요."></TextInput>
+							placeholder="ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ검색해 보세요."></TextInput>
 					</View>
 				</View>
 			</View>
