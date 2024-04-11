@@ -7,10 +7,10 @@ const MainBody = () => {
 	const [fox, setFox] = useState<string[]>([]);
 	const [test, setTest] = useState<number[]>([1, 2, 3, 4]);
 	const [needMedicine] = useState<string[]>([
-		"AA",
-		"BB",
-		"CC",
-		"DD",
+		"사막 여우",
+		"북극 여우",
+		"벵갈 여우",
+		"구미호",
 	]);
 
 	const getFox = async () => {
@@ -30,7 +30,9 @@ const MainBody = () => {
 	return (
 		<>
 			<View>
-				<Text>네네넹</Text>
+				<View style={MainBodyLayout.bodyTitle}>
+					<Text style={MainBodyLayout.bodyTitleText}>여우 선택하기</Text>
+				</View>
 				<ScrollView horizontal={true}>
 					{needMedicine.map((value: string, index: number) => {
 						return (
@@ -45,7 +47,9 @@ const MainBody = () => {
 				<ScrollView horizontal={true}>
 					{fox.map((image: string, index: number) => {
 						return (
-							<View key={index} style={MainBodyLayout.bodyImageContainerWrap}>
+							<TouchableOpacity
+								key={index}
+								style={MainBodyLayout.bodyImageContainerWrap}>
 								<Image
 									source={{ uri: image }}
 									style={MainBodyLayout.bodyImage}></Image>
@@ -55,7 +59,7 @@ const MainBody = () => {
 								<Text style={MainBodyLayout.bodyImageTitle}>
 									{index + 1} + 타이틀
 								</Text>
-							</View>
+							</TouchableOpacity>
 						);
 					})}
 				</ScrollView>
