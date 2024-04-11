@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Text, View, Button, NativeModules } from "react-native";
-import TimerLayout from "./timerLayout";
+import TimerLayout from "./TimerLayout";
 
 const { TimerModule } = NativeModules;
 

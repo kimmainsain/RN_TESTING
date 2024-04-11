@@ -8,7 +8,12 @@ import { CommonType } from "../types/NavigationType";
 const Main = ({ route, navigation }: CommonType.MainProps) => {
 	return (
 		<>
-			<View>
+			<View
+				style={{
+					marginTop: 10,
+					marginLeft: 10,
+					marginRight: 10,
+				}}>
 				<MainHeader />
 				<Timer />
 				<MainFooter />
