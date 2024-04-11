@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Text, View, Button, TouchableOpacity } from "react-native";
+import { Text, View, Button, TouchableOpacity, ScrollView } from "react-native";
 import Timer from "../components/Timer/Timer";
 import MainHeader from "../components/Header/MainHeader";
 import MainFooter from "../components/Footer/MainFooter";
@@ -10,12 +10,13 @@ const Main = ({ route, navigation }: CommonType.MainProps) => {
 		<>
 			<View
 				style={{
-					marginTop: 10,
-					marginLeft: 10,
-					marginRight: 10,
+					flex: 1,
 				}}>
 				<MainHeader />
-				<Timer />
+				<ScrollView>
+					<Timer />
+					<Button title="Menu" onPress={() => navigation.navigate("Menu")} />
+				</ScrollView>
 				<MainFooter />
 			</View>
 		</>
